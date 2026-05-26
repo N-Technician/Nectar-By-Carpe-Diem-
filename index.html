@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nectar by Carpe Diem - Luxury Rooftop Restaurant & Bar | Thamel, Kathmandu</title>
+    <meta name="description" content="Nectar by Carpe Diem - Premium rooftop restaurant in Thamel with 360° valley views, live music, craft cocktails, and unforgettable dining experiences in Kathmandu.">
+    <meta name="keywords" content="rooftop restaurant Kathmandu, Thamel restaurant, fine dining, craft cocktails, event venues, wedding reception">
+    <meta name="author" content="Nectar by Carpe Diem">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #d4af37;
+            --dark-bg: #0a0e27;
+            --card-bg: #1a2043;
+            --text-primary: #e8e8e8;
+            --text-secondary: #a8a8a8;
+            --accent: #ff6b35;
+            --success: #2ecc71;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a2043 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ========== HEADER & NAVIGATION ========== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), #e6a028);
+            color: #000;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-toggle.active {
+            color: var(--accent);
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 14, 39, 0.99);
+            backdrop-filter: blur(10px);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-overlay ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .mobile-menu-overlay a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: block;
+            padding: 1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .mobile-menu-overlay a:hover {
+            color: var(--primary);
+            background: rgba(212, 175, 55, 0.1);
+            border-left-color: var(--primary);
+            transform: translateX(10px);
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            margin-top: 70px;
+            min-height: 100vh;
+            background: linear-gradient(rgba(10, 14, 39, 0.7), rgba(10, 14, 39, 0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%%" style="stop-color:%23ff6b35;stop-opacity:0.1" /><stop offset="100%%" style="stop-color:%23d4af37;stop-opacity:0.05" /></linearGradient></defs><rect width="1200" height="600" fill="url(%23grad)"/><circle cx="100" cy="100" r="150" fill="%23d4af37" opacity="0.05"/><circle cx="1100" cy="500" r="200" fill="%23ff6b35" opacity="0.05"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 10;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #e6a028);
+            color: #000;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: #000;
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        /* ========== ABOUT SECTION ========== */
+        .about {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* ========== FEATURES SECTION ========== */
+        .features {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(26, 32, 67, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            background: rgba(26, 32, 67, 1);
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+              /* ========== MENU SECTION ========== */
+        .menu {
+            padding: 6rem 2rem;
+            background: rgba(26, 32, 67, 0.5);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .menu-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            background: transparent;
+            color: var(--text-primary);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .menu-item {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        .menu-item-image-container {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(255, 107, 53, 0.15));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(255, 107, 53, 0.2));
+        }
+
+        .menu-item-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .menu-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .menu-item-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .variety-section {
+            background: rgba(212, 175, 55, 0.08);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        .variety-label {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .variety-items {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .menu-item-tags {
+            padding: 1rem 1.5rem 0 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: auto;
+        }
+
+        .tag {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--primary);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* ========== GALLERY SECTION ========== */
+        .gallery {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            padding: 2rem 0;
+        }
+
+        .gallery-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            gap: 1.5rem;
+            width: max-content;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            flex: 0 0 300px;
+            aspect-ratio: 1;
+            cursor: pointer;
+            background: var(--card-bg);
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .gallery-item-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay-text {
+            color: var(--primary);
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* ========== EVENTS SECTION ========== */
+        .events {
+            padding: 6rem 2rem;
+            background: rgba(26, 32, 67, 0.5);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .event-package {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .event-package:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15);
+        }
+
+        .event-package h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .event-features {
+            text-align: left;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        .event-features li {
+            list-style: none;
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .event-features li:before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 0.8rem;
+        }
+
+        /* ========== BOOKING SECTION ========== */
+        .booking {
+            padding: 6rem 2rem;
+            background: rgba(26, 32, 67, 0.5);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .booking-form {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .booking-form h2 {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--text-primary);
+            border-radius: 8px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .booking-info {
+            color: var(--text-secondary);
+        }
+
+        .booking-info h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .info-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-item strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+          }
+      /* ========== LOCATION SECTION ========== */
+        .location {
+            padding: 6rem 2rem;
+            background: rgba(26, 32, 67, 0.5);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .location-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .location-map {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            aspect-ratio: 16 / 9;
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .location-info {
+            color: var(--text-secondary);
+        }
+
+        .location-info h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .contact-detail:last-child {
+            border-bottom: none;
+        }
+
+        .contact-label {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .contact-detail a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-detail a:hover {
+            color: var(--accent);
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+        }
+
+        .hours-list strong {
+            color: var(--primary);
+        }
+
+        /* ========== AMENITIES SECTION ========== */
+        .amenities {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .amenity-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .amenity-item:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+
+        .amenity-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .amenity-item h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .amenity-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: rgba(10, 14, 39, 0.95);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 3rem 2rem;
+            margin-top: 6rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: #000;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        /* ========== WHATSAPP FLOATING BUTTON ========== */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            box-shadow: 0 5px 30px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+            border: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 5px 30px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 5px 50px rgba(37, 211, 102, 0.8);
+            }
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 40px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-button svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .booking-container,
+            .location-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .cta-button {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                flex: 0 0 250px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 0.8rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+            }
+
+            .mobile-menu-toggle {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                margin-top: 60px;
+                min-height: 70vh;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+
+            .features-grid,
+            .events-grid,
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-form {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .gallery-item {
+                flex: 0 0 200px;
+            }
+
+            .whatsapp-button {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+
+            .whatsapp-button svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header">
+        <nav>
+            <div class="logo">🍷 Nectar</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#features">Facilities</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#events">Event Booking</a></li>
+                <li><a href="#booking">Book Table</a></li>
+                <li><a href="#location">Contact Us</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <ul>
+            <li><a href="#home">🏠 Homepage</a></li>
+            <li><a href="#about">ℹ️ About Us</a></li>
+            <li><a href="#features">⭐ Facilities</a></li>
+            <li><a href="#menu">🍽️ Menu</a></li>
+            <li><a href="#gallery">🖼️ Gallery</a></li>
+            <li><a href="#events">🎉 Event Booking</a></li>
+            <li><a href="#booking">📅 Book Table</a></li>
+            <li><a href="#location">📍 Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Nectar by Carpe Diem</h1>
+            <p>Luxury Rooftop Dining with 360° Valley Views | Thamel, Kathmandu</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn-primary">Reserve Your Table</a>
+                <a href="#gallery" class="btn-secondary">Explore Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Nectar by Carpe Diem</h2>
+        <p class="section-subtitle">Your Premier Rooftop Destination in Kathmandu</p>
+        
+        <div style="max-width: 900px; margin: 0 auto; color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem; text-align: center;">
+            <p style="margin-bottom: 1.5rem;">
+                Welcome to <strong style="color: var(--primary);">Nectar by Carpe Diem</strong>, nestled in the vibrant heart of Thamel, Kathmandu. 
+                We are more than just a restaurant—we are a destination for unforgettable experiences.
+            </p>
+            <p style="margin-bottom: 1.5rem;">
+                Perched above the bustling streets, our rooftop venue offers <strong style="color: var(--primary);">breathtaking 360° valley views</strong> 
+                that transform every moment into something magical. Whether you're seeking a romantic sunset dinner, a celebration with friends, 
+                or a business gathering, Nectar is your sanctuary.
+            </p>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features" id="features">
+        <h2 class="section-title">Experience the Magic</h2>
+        <p class="section-subtitle">Discover what makes Nectar by Carpe Diem the ultimate rooftop destination</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌅</div>
+                <h3>360° Valley Views</h3>
+                <p>Breathtaking panoramic views of Kathmandu Valley from our exclusive rooftop setting</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎵</div>
+                <h3>Live Music & DJ</h3>
+                <p>Curated sundowner sessions and live performances every evening</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🍹</div>
+                <h3>Signature Cocktails</h3>
+                <p>Expertly crafted artisan cocktails with creative, conceptualized menu</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔨</div>
+                <h3>Hammock Seating</h3>
+                <p>Relax in comfort with our unique hammock and outdoor seating areas</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🍽️</div>
+                <h3>Multi-Cuisine Menu</h3>
+                <p>Chinese, Indian, Asian, Nepali, and Cafe-style delicacies</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Classy Ambiance</h3>
+                <p>A hidden gem with cozy, sophisticated vibes perfect for every occasion</p>
+            </div>
+        </div>
+    </section>
+    <!-- MENU SECTION -->
+    <section class="menu" id="menu">
+        <h2 class="section-title">Our Digital Menu</h2>
+        <p class="section-subtitle">Explore our diverse culinary offerings with photos</p>
+
+        <div class="menu-filters">
+            <button class="filter-btn active" onclick="filterMenu('all')">All Items</button>
+            <button class="filter-btn" onclick="filterMenu('appetizers')">Appetizers</button>
+            <button class="filter-btn" onclick="filterMenu('mains')">Main Course</button>
+            <button class="filter-btn" onclick="filterMenu('cocktails')">Cocktails</button>
+            <button class="filter-btn" onclick="filterMenu('harddrinks')">Beer & Hard Drinks</button>
+            <button class="filter-btn" onclick="filterMenu('veg')">Vegetarian</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+            <!-- Menu items will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery" id="gallery">
+        <h2 class="section-title">Visual Journey</h2>
+        <p class="section-subtitle">Auto-scrolling gallery - Immerse yourself in our world</p>
+
+        <div class="gallery-container">
+            <div class="gallery-track" id="galleryTrack">
+                <div class="gallery-item">
+                    <div class="gallery-item-content" style="background: linear-gradient(135deg, #ff6b35 0%, #f72585 100%);">🌅</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">360° Valley Views</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-content" style="background: linear-gradient(135deg, #d4af37 0%, #f72585 100%);">🔨</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">Hammock Seating</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-content" style="background: linear-gradient(135deg, #ff6b35 0%, #d4af37 100%);">🍹</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">Craft Cocktails</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-content" style="background: linear-gradient(135deg, #f72585 0%, #ff6b35 100%);">🎵</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">Live Music</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-content" style="background: linear-gradient(135deg, #d4af37 0%, #ff6b35 100%);">🍽️</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">Gourmet Cuisine</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-content" style="background: linear-gradient(135deg, #ff6b35 0%, #d4af37 100%);">✨</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">Night Ambiance</div>
+                    </div>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="gallery-item">
+                    <div class="gallery-item-content" style="background: linear-gradient(135deg, #ff6b35 0%, #f72585 100%);">🌅</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">360° Valley Views</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-content" style="background: linear-gradient(135deg, #d4af37 0%, #f72585 100%);">🔨</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">Hammock Seating</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-content" style="background: linear-gradient(135deg, #ff6b35 0%, #d4af37 100%);">🍹</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">Craft Cocktails</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-content" style="background: linear-gradient(135deg, #f72585 0%, #ff6b35 100%);">🎵</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">Live Music</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENTS SECTION -->
+    <section class="events" id="events">
+        <h2 class="section-title">Host Your Event</h2>
+        <p class="section-subtitle">Create unforgettable memories at our exclusive venue</p>
+
+        <div class="events-grid">
+            <div class="event-package">
+                <h3>🎂 Birthday Parties</h3>
+                <ul class="event-features">
+                    <li>Free Decoration Setup</li>
+                    <li>Customized Menu</li>
+                    <li>DJ & Live Music</li>
+                    <li>Private Seating Area</li>
+                    <li>Complimentary Birthday Cake</li>
+                </ul>
+                <a href="#booking" class="btn-primary" style="width: 100%; margin-top: 1.5rem;">Plan Your Party</a>
+            </div>
+
+            <div class="event-package">
+                <h3>💒 Weddings & Receptions</h3>
+                <ul class="event-features">
+                    <li>Capacity: 50-200+ Guests</li>
+                    <li>Customized Menu Planning</li>
+                    <li>Free Decoration Package</li>
+                    <li>Professional Event Team</li>
+                    <li>Photography Friendly Setup</li>
+                </ul>
+                <a href="#booking" class="btn-primary" style="width: 100%; margin-top: 1.5rem;">Plan Your Wedding</a>
+            </div>
+
+            <div class="event-package">
+                <h3>🏢 Corporate Events</h3>
+                <ul class="event-features">
+                    <li>Meeting & Dining Space</li>
+                    <li>WiFi & Tech Support</li>
+                    <li>Customized Menus</li>
+                    <li>Professional Catering</li>
+                    <li>Private Area Options</li>
+                </ul>
+                <a href="#booking" class="btn-primary" style="width: 100%; margin-top: 1.5rem;">Book Corporate Event</a>
+            </div>
+
+            <div class="event-package">
+                <h3>🎉 Festival Parties</h3>
+                <ul class="event-features">
+                    <li>Holi, Diwali & More</li>
+                    <li>DJ & Entertainment</li>
+                    <li>Group Discounts</li>
+                    <li>Special Themed Menus</li>
+                    <li>Free Entry Promos</li>
+                </ul>
+                <a href="#booking" class="btn-primary" style="width: 100%; margin-top: 1.5rem;">Book Festival Event</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section class="booking" id="booking">
+        <h2 class="section-title">Book Your Table</h2>
+        <p class="section-subtitle">Reserve your spot for an unforgettable experience</p>
+
+        <div class="booking-container">
+            <div class="booking-form">
+                <h2>Reserve Now</h2>
+                <form onsubmit="handleBooking(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Date *</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Time *</label>
+                            <input type="time" id="time" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guests">Party Size *</label>
+                            <select id="guests" required>
+                                <option value="">Select...</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3-4">3-4 People</option>
+                                <option value="5-6">5-6 People</option>
+                                <option value="7-10">7-10 People</option>
+                                <option value="10+">10+ People</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="seating">Seating Preference</label>
+                            <select id="seating">
+                                <option value="">Any</option>
+                                <option value="regular">Regular Table</option>
+                                <option value="hammock">Hammock</option>
+                                <option value="couple">Romantic Couple Seating</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="occasion">Occasion</label>
+                        <select id="occasion">
+                            <option value="">Select Occasion</option>
+                            <option value="dinner">Casual Dinner</option>
+                            <option value="birthday">Birthday Celebration</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="romantic">Romantic Date</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="wedding">Wedding/Reception</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="requests">Special Requests</label>
+                        <textarea id="requests" rows="3" placeholder="Any dietary requirements, birthday setup, etc."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; font-size: 1rem;">📱 Send via WhatsApp</button>
+                </form>
+            </div>
+
+            <div class="booking-info">
+                <h3>Why Book with Us?</h3>
+                
+                <div class="info-item">
+                    <strong>📱 Direct WhatsApp</strong>
+                    Submit the form and we'll confirm your booking via WhatsApp instantly
+                </div>
+
+                <div class="info-item">
+                    <strong>🎯 Flexible Seating</strong>
+                    Regular tables, romantic hammock seating, or private group areas
+                </div>
+
+                <div class="info-item">
+                    <strong>🍽️ Customizable Menu</strong>
+                    Vegetarian, vegan, and all dietary preferences welcome
+                </div>
+
+                <div class="info-item">
+                    <strong>🎉 Special Occasions</strong>
+                    Birthday setups, anniversaries, and celebrations with free decorations
+                </div>
+
+                <div class="info-item">
+                    <strong>⏰ Operating Hours</strong>
+                    Daily: 8:00 AM - 1:00 AM for all meals
+                </div>
+
+                <div class="info-item">
+                    <strong>💳 Easy Payment</strong>
+                    Credit cards, digital payments, and cash accepted
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AMENITIES SECTION -->
+    <section class="amenities">
+        <h2 class="section-title">Our Facilities & Amenities</h2>
+        <p class="section-subtitle">Everything you need for a perfect experience</p>
+
+        <div class="amenities-grid">
+            <div class="amenity-item">
+                <div class="amenity-icon">🌐</div>
+                <h4>Free WiFi</h4>
+                <p>Complimentary high-speed internet</p>
+            </div>
+            <div class="amenity-item">
+                <div class="amenity-icon">🎸</div>
+                <h4>Live Music & DJ</h4>
+                <p>Evening entertainment daily</p>
+            </div>
+            <div class="amenity-item">
+                <div class="amenity-icon">🚗</div>
+                <h4>Parking Available</h4>
+                <p>Convenient parking options</p>
+            </div>
+            <div class="amenity-item">
+                <div class="amenity-icon">🍽️</div>
+                <h4>Buffet Service</h4>
+                <p>Unlimited brunch options</p>
+            </div>
+            <div class="amenity-item">
+                <div class="amenity-icon">👶</div>
+                <h4>Family Friendly</h4>
+                <p>Highchairs & kids menu</p>
+            </div>
+            <div class="amenity-item">
+                <div class="amenity-icon">🛋️</div>
+                <h4>Outdoor Seating</h4>
+                <p>Hammocks with valley views</p>
+            </div>
+            <div class="amenity-item">
+                <div class="amenity-icon">🍹</div>
+                <h4>Full Bar</h4>
+                <p>Beer, wine & cocktails</p>
+            </div>
+            <div class="amenity-item">
+                <div class="amenity-icon">💳</div>
+                <h4>Multiple Payments</h4>
+                <p>Cards & digital payments</p>
+            </div>
+            <div class="amenity-item">
+                <div class="amenity-icon">🎁</div>
+                <h4>Gift Cards</h4>
+                <p>Perfect gift option</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <section class="location" id="location">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">Find us in the heart of Thamel, Kathmandu</p>
+
+        <div class="location-container">
+            <div class="location-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.5274919844314!2d85.3129!3d27.7172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb18b8b8b8b8b9%3A0x0!2sThamel%2C%20Kathmandu!5e0!3m2!1sen!2snp!4v1234567890" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="location-info">
+                <h2>Get in Touch</h2>
+
+                <div class="contact-detail">
+                    <span class="contact-label">📍 Location</span>
+                    Kaldhara, Pipalbot, Paknajol Area<br>
+                    Thamel, Kathmandu, Nepal
+                </div>
+
+                <div class="contact-detail">
+                    <span class="contact-label">📞 Phone</span>
+                    <a href="tel:+977-9804650880">+977-9804650880</a>
+                </div>
+
+                <div class="contact-detail">
+                    <span class="contact-label">💬 WhatsApp</span>
+                    <a href="https://wa.me/977-9804650880">Chat with us directly</a>
+                </div>
+
+                <div class="contact-detail">
+                    <span class="contact-label">⏰ Operating Hours</span>
+                    <ul class="hours-list">
+                        <li><strong>Monday - Sunday:</strong> 8:00 AM - 1:00 AM</li>
+                        <li><strong>Breakfast:</strong> 8:00 - 11:00 AM</li>
+                        <li><strong>Lunch:</strong> 12:00 - 4:00 PM</li>
+                        <li><strong>Dinner:</strong> 6:00 PM - 1:00 AM</li>
+                    </ul>
+                </div>
+
+                <div class="contact-detail">
+                    <span class="contact-label">✉️ Special Orders</span>
+                    Reservations accepted for all occasions. Large groups welcome!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Nectar</h4>
+                <p>Experience luxury rooftop dining with 360° valley views. A hidden gem in Thamel offering classy ambiance, signature cocktails, and unforgettable memories.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" title="Facebook">f</a>
+                    <a href="https://instagram.com" title="Instagram">📷</a>
+                    <a href="https://wa.me/977-9804650880" title="WhatsApp">💬</a>
+                    <a href="tel:+977-9804650880" title="Call">📞</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Homepage</a></li>
+                    <li><a href="#menu">View Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#events">Host an Event</a></li>
+                    <li><a href="#booking">Make Reservation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#menu">Unlimited Brunch</a></li>
+                    <li><a href="#events">Private Events</a></li>
+                    <li><a href="#events">Corporate Parties</a></li>
+                    <li><a href="#events">Wedding Receptions</a></li>
+                    <li><a href="#menu">Fine Dining</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+977-9804650880">+977-9804650880</a></li>
+                    <li><a href="https://wa.me/977-9804650880">WhatsApp Chat</a></li>
+                    <li><a href="#location">Thamel, Kathmandu</a></li>
+                    <li>Open: 8 AM - 1 AM</li>
+                    <li>Daily</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nectar by Carpe Diem. All rights reserved. | Luxury Rooftop Restaurant & Bar, Thamel, Kathmandu</p>
+        </div>
+    </footer>
+
+  
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/977-9804650880?text=Hello%20Nectar%20by%20Carpe%20Diem!%20I%27d%20like%20to%20inquire%20about%20a%20booking." class="whatsapp-button" title="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a6.963 6.963 0 00-6.957 6.97c0 1.927.566 3.821 1.636 5.487L3.2 21.28l5.84-1.533c1.607.887 3.421 1.354 5.247 1.354 6.537 0 11.856-5.32 11.856-11.857 0-3.169-1.233-6.15-3.476-8.384-2.243-2.233-5.224-3.464-8.384-3.464"/>
+        </svg>
+    </a>
+
+    <script>
+        // Menu Data with Perfect Structure
+        const menuItems = [
+            // Appetizers
+            { category: 'appetizers', name: 'Momos', description: 'Steamed dumplings with spiced meat or vegetable filling', image: 'https://via.placeholder.com/300x200?text=Momos', tags: ['Veg', 'Non-Veg'], variety: 'Vegetable, Chicken, Buff' },
+            { category: 'appetizers', name: 'Samosas', description: 'Crispy pastry filled with spiced potatoes and peas', image: 'https://via.placeholder.com/300x200?text=Samosas', tags: ['Veg'], variety: 'Potato, Mixed Vegetable' },
+            { category: 'appetizers', name: 'Chicken Sekuwa', description: 'Grilled marinated chicken skewers with herbs', image: 'https://via.placeholder.com/300x200?text=Sekuwa', tags: ['Non-Veg'], variety: 'Chicken, Paneer' },
+            
+            // Main Course
+            { category: 'mains', name: 'Butter Chicken', description: 'Tender chicken in creamy tomato-based sauce', image: 'https://via.placeholder.com/300x200?text=Butter+Chicken', tags: ['Non-Veg'], variety: 'Chicken, Paneer Butter Masala' },
+            { category: 'mains', name: 'Paneer Tikka Masala', description: 'Cottage cheese in aromatic spiced cream sauce', image: 'https://via.placeholder.com/300x200?text=Paneer+Tikka', tags: ['Veg'], variety: 'Paneer, Vegetable' },
+            { category: 'mains', name: 'Chow Mein', description: 'Stir-fried noodles with vegetables and protein', image: 'https://via.placeholder.com/300x200?text=Chow+Mein', tags: ['Veg', 'Non-Veg'], variety: 'Vegetable, Chicken, Shrimp' },
+            { category: 'mains', name: 'Fried Rice', description: 'Fragrant rice with mixed vegetables and meat', image: 'https://via.placeholder.com/300x200?text=Fried+Rice', tags: ['Veg', 'Non-Veg'], variety: 'Plain, Egg, Chicken, Shrimp' },
+            { category: 'mains', name: 'Dal Bhat', description: 'Traditional lentil curry with rice and vegetables', image: 'https://via.placeholder.com/300x200?text=Dal+Bhat', tags: ['Veg'], variety: 'Regular, Premium' },
+            
+            // Cocktails
+            { category: 'cocktails', name: 'Nectar Sunset', description: 'Signature blend with sunset hues - vodka, passion fruit, ginger', image: 'https://via.placeholder.com/300x200?text=Nectar+Sunset', tags: ['Signature'], variety: 'Classic, Mocktail' },
+            { category: 'cocktails', name: 'Kathmandu Sunrise', description: 'Rum, mango, lime, and fresh herbs', image: 'https://via.placeholder.com/300x200?text=Sunrise', tags: ['Signature'], variety: 'Regular, Virgin' },
+            { category: 'cocktails', name: 'Valley Breeze', description: 'Gin-based cocktail with local inspiration', image: 'https://via.placeholder.com/300x200?text=Valley+Breeze', tags: ['Signature'], variety: 'Classic, Premium' },
+            { category: 'cocktails', name: 'Margarita', description: 'Classic tequila-based cocktail', image: 'https://via.placeholder.com/300x200?text=Margarita', tags: ['Classic'], variety: 'Regular, Frozen' },
+            { category: 'cocktails', name: 'Mojito', description: 'Refreshing rum, mint, and lime cocktail', image: 'https://via.placeholder.com/300x200?text=Mojito', tags: ['Classic'], variety: 'Rum, Virgin Mojito' },
+            
+            // Beer & Hard Drinks
+            { category: 'harddrinks', name: 'Local Beer Selection', description: 'Premium selection of Nepali craft beers', image: 'https://via.placeholder.com/300x200?text=Local+Beer', tags: ['Beer'], variety: 'Tuborg, Nepal Ice, Everest' },
+            { category: 'harddrinks', name: 'Imported Beer', description: 'International premium beer collection', image: 'https://via.placeholder.com/300x200?text=Imported+Beer', tags: ['Beer'], variety: 'Corona, Heineken, Carlsberg' },
+            { category: 'harddrinks', name: 'Whiskey Selection', description: 'Premium single malt and blended whiskeys', image: 'https://via.placeholder.com/300x200?text=Whiskey', tags: ['Hard Drink'], variety: 'Johnnie Walker, Jack Daniels, Glenmorangie' },
+            { category: 'harddrinks', name: 'Rum Collection', description: 'Finest rums from around the world', image: 'https://via.placeholder.com/300x200?text=Rum', tags: ['Hard Drink'], variety: 'Bacardi, Captain Morgan, Mount Gay' },
+            { category: 'harddrinks', name: 'Vodka Selection', description: 'Premium vodkas for connoisseurs', image: 'https://via.placeholder.com/300x200?text=Vodka', tags: ['Hard Drink'], variety: 'Smirnoff, Absolut, Grey Goose' },
+            { category: 'harddrinks', name: 'Wine Selection', description: 'Curated selection of red, white, and rosé wines', image: 'https://via.placeholder.com/300x200?text=Wine', tags: ['Wine'], variety: 'Red, White, Rosé, Sparkling' },
+            
+            // Vegetarian
+            { category: 'veg', name: 'Vegetable Biryani', description: 'Aromatic rice cooked with mixed vegetables', image: 'https://via.placeholder.com/300x200?text=Veg+Biryani', tags: ['Veg'], variety: 'Regular, Premium' },
+            { category: 'veg', name: 'Aloo Gobi', description: 'Potatoes and cauliflower in spiced curry', image: 'https://via.placeholder.com/300x200?text=Aloo+Gobi', tags: ['Veg'], variety: 'Mild, Spicy' },
+            { category: 'veg', name: 'Paneer Pakora', description: 'Crispy fried cottage cheese with herbs', image: 'https://via.placeholder.com/300x200?text=Paneer+Pakora', tags: ['Veg'], variety: 'Regular, Spicy' },
+        ];
+
+        // Render Menu Function
+        function renderMenu(items) {
+            const menuGrid = document.getElementById('menuGrid');
+            menuGrid.innerHTML = items.map(item => `
+                <div class="menu-item">
+                    <div class="menu-item-image-container">
+                        <div class="menu-item-image-placeholder">🍽️</div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>${item.name}</h3>
+                        <p class="menu-item-desc">${item.description}</p>
+                        <div class="variety-section">
+                            <div class="variety-label">📌 Varieties:</div>
+                            <div class="variety-items">${item.variety}</div>
+                        </div>
+                    </div>
+                    <div class="menu-item-tags">
+                        ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter Menu Function
+        function filterMenu(category) {
+            const filtered = category === 'all' ? menuItems : menuItems.filter(item => item.category === category);
+            renderMenu(filtered);
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Handle Booking Form
+        function handleBooking(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const guests = document.getElementById('guests').value;
+            const seating = document.getElementById('seating').value;
+            const occasion = document.getElementById('occasion').value;
+            const requests = document.getElementById('requests').value;
+
+            const message = `🍽️ *BOOKING REQUEST* 🍽️
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Date: ${date}
+Time: ${time}
+Party Size: ${guests}
+Seating: ${seating || 'Any'}
+Occasion: ${occasion || 'Not specified'}
+Special Requests: ${requests || 'None'}
+
+Looking forward to serving you at Nectar by Carpe Diem! 🌅`;
+
+            const whatsappURL = `https://wa.me/977-9804650880?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+
+            alert('✅ Booking request sent! Manager will confirm via WhatsApp shortly.');
+            e.target.reset();
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileToggle = document.getElementById('mobileToggle');
+            mobileMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+        }
+
+        // Close mobile menu when link is clicked
+        document.querySelectorAll('.mobile-menu-overlay a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.remove('active');
+                document.getElementById('mobileToggle').classList.remove('active');
+            });
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderMenu(menuItems);
+            
+            // Mobile menu toggle
+            const mobileToggle = document.getElementById('mobileToggle');
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', toggleMobileMenu);
+            }
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                const header = document.getElementById('header');
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(10, 14, 39, 0.98)';
+                } else {
+                    header.style.background = 'rgba(10, 14, 39, 0.95)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+  
